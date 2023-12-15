@@ -6,11 +6,11 @@ function ExpenseList() {
 
   return (
     <div>
-      <h2>Expenses</h2>
+      <h2>Dépenses</h2>
       <ul>
         {expenses.map((expense, index) => (
           <li key={index}>
-            {expense.amount} - {expense.category}
+            <span>{expense.amount}</span> - {expense.category}
           </li>
         ))}
       </ul>

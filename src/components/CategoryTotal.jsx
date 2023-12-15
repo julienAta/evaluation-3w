@@ -12,11 +12,11 @@ function CategoryTotal() {
 
   return (
     <div>
-      <h2>Total by Category</h2>
+      <h2>Total par catégorie</h2>
       <ul>
         {Object.entries(totalByCategory).map(([category, total], index) => (
           <li key={index}>
-            {category}: {total.toFixed(2)}
+            {category}: <span>{total.toFixed(2)}</span>
           </li>
         ))}
       </ul>

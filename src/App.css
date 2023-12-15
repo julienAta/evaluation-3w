@@ -1,42 +1,122 @@
+html {
+  height: 100vh;
+  --u: 10px;
+  --c1: #e3e3e3;
+  --c2: #02b6e7;
+  --c3: #00399b;
+  --gp: 50% / calc(var(--u) * 16.9) calc(var(--u) * 12.8);
+  background: conic-gradient(
+        from 122deg at 50% 85.15%,
+        var(--c2) 0 58deg,
+        var(--c3) 0 116deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    conic-gradient(from 122deg at 50% 72.5%, var(--c1) 0 116deg, #fff0 0 100%)
+      var(--gp),
+    conic-gradient(from 58deg at 82.85% 50%, var(--c3) 0 64deg, #fff0 0 100%)
+      var(--gp),
+    conic-gradient(
+        from 58deg at 66.87% 50%,
+        var(--c1) 0 64deg,
+        var(--c2) 0 130deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    conic-gradient(from 238deg at 17.15% 50%, var(--c2) 0 64deg, #fff0 0 100%)
+      var(--gp),
+    conic-gradient(
+        from 172deg at 33.13% 50%,
+        var(--c3) 0 66deg,
+        var(--c1) 0 130deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    linear-gradient(98deg, var(--c3) 0 15%, #fff0 calc(15% + 1px) 100%)
+      var(--gp),
+    linear-gradient(-98deg, var(--c2) 0 15%, #fff0 calc(15% + 1px) 100%)
+      var(--gp),
+    conic-gradient(
+        from -58deg at 50.25% 14.85%,
+        var(--c3) 0 58deg,
+        var(--c2) 0 116deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    conic-gradient(from -58deg at 50% 28.125%, var(--c1) 0 116deg, #fff0 0 100%)
+      var(--gp),
+    linear-gradient(90deg, var(--c2) 0 50%, var(--c3) 0 100%) var(--gp);
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.1);
+  transition: background-color 200ms;
+  background-color: #242424;
+  color: white;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#root:hover {
+  background-color: #272727;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form div {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+form div input {
+  flex: 1 0 0;
+}
+
+form :is(input, select, button) {
+  padding: 20px;
+}
+
+:is(li span, h2 + p):after {
+  content: " €";
+}
+
+li {
+  text-align: left;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+p:last-of-type {
+  font-size: larger;
+  font-weight: bolder;
+  border: solid 1px white;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0;
+}
+
+@media screen and (orientation = portrait) {
+  ul {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  form div {
+    flex-direction: column;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
